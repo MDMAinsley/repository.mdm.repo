@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="repository.mdm.repo" name="MDM Repo" version="0.0.3" provider-name="MDMAinsley">
+<addons><addon id="repository.mdm.repo" name="MDM Repo" version="0.1.0" provider-name="MDMAinsley">
   <extension point="xbmc.addon.repository" name="MDM Repo">
     <dir>
       <info>http://mdmainsley.github.io/repository.mdm.repo/addons.xml</info>
@@ -98,13 +98,14 @@
     </assets>
   </extension>
   
-</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.0.1" provider-name="MDMAinsley">
+</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.0.2" provider-name="MDMAinsley">
 	   
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
   
-  <extension point="xbmc.python.script" library="default.py" />
+  <extension point="xbmc.gui.skin">
+  </extension>
   
   <extension point="xbmc.addon.metadata">
     <summary>MDM Skin Addon</summary>
