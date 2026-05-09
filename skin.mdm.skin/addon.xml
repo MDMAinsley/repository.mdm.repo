@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.mdm.skin"
+	   name="MDM Skin" 
+	   version="0.0.1"
+	   provider-name="MDMAinsley">
+	   
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  
+  <extension point="xbmc.python.script" library="default.py"/>
+  
+  <extension point="xbmc.addon.metadata">
+    <summary>MDM Skin Addon</summary>
+    <description>Desc.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+  
+</addon>

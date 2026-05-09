@@ -98,7 +98,7 @@
     </assets>
   </extension>
   
-</addon><addon id="script.mdm.skin" name="MDM Skin" version="0.0.1" provider-name="MDMAinsley">
+</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.0.1" provider-name="MDMAinsley">
 	   
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
