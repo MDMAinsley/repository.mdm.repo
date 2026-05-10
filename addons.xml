@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="repository.mdm.repo" name="MDM Repo" version="0.1.10" provider-name="MDMAinsley">
+<addons><addon id="repository.mdm.repo" name="MDM Repo" version="0.1.12" provider-name="MDMAinsley">
   <extension point="xbmc.addon.repository" name="MDM Repo">
     <dir>
       <info>http://mdmainsley.github.io/repository.mdm.repo/addons.xml</info>
@@ -62,7 +62,7 @@
     </assets>
   </extension>
   
-</addon><addon id="script.mdm.core" name="MDM Core" version="0.0.11" provider-name="MDMAinsley">
+</addon><addon id="script.mdm.core" name="MDM Core" version="0.0.12" provider-name="MDMAinsley">
 
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
