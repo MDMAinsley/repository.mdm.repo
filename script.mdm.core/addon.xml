@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addon id="script.mdm.core"
-	   name="MDM Core"
-	   version="0.0.1"
-	   provider-name="MDMAinsley">
-	   
+       name="MDM Core"
+       version="0.0.2"
+       provider-name="MDMAinsley">
+
   <requires>
-    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="xbmc.python" version="3.0.0"/>
   </requires>
-  
+
   <extension point="xbmc.python.script" library="default.py"/>
-  
+
   <extension point="xbmc.addon.metadata">
-    <summary>MDM Core Script Addon</summary>
-    <description>Desc.</description>
+    <summary>Shared backend utilities for MDM Kodi Addons</summary>
+    <description>Provides shared logging, settings, path, cache, network, device, and Kodi wrapper utilities used by the MDM Kodi Addons ecosystem.</description>
     <platform>all</platform>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-  
+
 </addon>
