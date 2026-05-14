@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.mdm.flix"
        name="MDM Flix"
-       version="0.0.6"
+       version="0.0.7"
        provider-name="MDM">
 
     <requires>
