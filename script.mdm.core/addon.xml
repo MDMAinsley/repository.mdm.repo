@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addon id="script.mdm.core"
        name="MDM Core"
-       version="0.1.0"
+       version="0.1.1"
        provider-name="MDMAinsley">
 
   <requires>
@@ -9,6 +9,8 @@
   </requires>
 
   <extension point="xbmc.python.script" library="default.py"/>
+  
+  <extension point="xbmc.python.module" library="resources/lib" />
 
   <extension point="xbmc.addon.metadata">
     <summary>Shared backend utilities for MDM Kodi Addons</summary>
