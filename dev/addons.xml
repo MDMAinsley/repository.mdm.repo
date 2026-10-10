@@ -24,12 +24,13 @@
     </assets>
   </extension>
   
-</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.1.0" provider-name="MDM">
+</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.2.0" provider-name="MDM">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.mdm.core" version="1.0.0" />
 		<import addon="inputstream.adaptive" optional="true" />
+        <import addon="script.module.cocoscrapers" version="1.0.39" optional="true" />
     </requires>
 
     <extension point="xbmc.python.pluginsource" library="default.py">

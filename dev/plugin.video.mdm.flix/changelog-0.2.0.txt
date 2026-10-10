@@ -1,0 +1,18 @@
+0.2.0 — CocoScrapers / AllDebrid playback batch (M2B)
+CocoScrapers enabled-provider adapter, TMDB-to-IMDb metadata and movie/episode playback routes.
+AllDebrid PIN authorisation, masked API key alternative, account check and local disconnect.
+Manual selection and autoplay; selected-source upload/status/files/unlock flow.
+Nested torrent file matching, Specials, multiple matching-file selection and cancellation.
+Provider-aware resolving, malformed-source rejection, debrid-first ordering and expiring atomic sessions.
+Meaningful settings and status diagnostics; no bulk cache-probe uploads.
+Native ordinary HLS playback and optional InputStream Adaptive for DASH.
+Kodi and authenticated third-party acceptance pending for this development batch.
+
+0.1.0 — TMDB browsing batch (M2A)
+Real popular/trending movie and TV catalogues, movie/TV search, paging,
+TV seasons (including Specials) and episode lists, artwork and metadata.
+TMDB application credentials/language settings; shared Core response cache.
+Clear configuration/network/no-results handling and TMDB credits.
+Catalogue details preserve movie/show IDs and episode coordinates.
+Real-title playback awaits provider integration; demo stream remains in Tools.
+Requires MDM Core 1.0.0. Kodi/platform acceptance pending.
