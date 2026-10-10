@@ -47,7 +47,7 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.mdm.conf" name="MDM Conf" version="0.2.0" provider-name="MDMAinsley">
+</addon><addon id="script.mdm.conf" name="MDM Conf" version="0.2.1" provider-name="MDMAinsley">
 	   
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
