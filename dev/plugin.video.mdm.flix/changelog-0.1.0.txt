@@ -1,0 +1,8 @@
+0.1.0 — TMDB browsing batch (M2A)
+Real popular/trending movie and TV catalogues, movie/TV search, paging,
+TV seasons (including Specials) and episode lists, artwork and metadata.
+TMDB application credentials/language settings; shared Core response cache.
+Clear configuration/network/no-results handling and TMDB credits.
+Catalogue details preserve movie/show IDs and episode coordinates.
+Real-title playback awaits provider integration; demo stream remains in Tools.
+Requires MDM Core 1.0.0. Kodi/platform acceptance pending.
