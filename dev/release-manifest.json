@@ -11,8 +11,8 @@
       "version": "0.3.1"
     },
     "script.mdm.conf": {
-      "commit": "0b9448661758f5eb81081841ce69b38511a0a676",
-      "version": "0.1.0"
+      "commit": "2f3e3550194e1158332f3c006b8c08448c3a471a",
+      "version": "0.2.0"
     },
     "script.mdm.core": {
       "commit": "4ea669e59b290c2847fb66fc3f6ea83f09bf9b82",
@@ -30,14 +30,14 @@
   "archives": {
     "repository.mdm.repo": "3218bf167e5988f239d1fc46de0d80bd",
     "plugin.video.mdm.flix": "eeb74079f33c3f9856742aaad8ebad71",
-    "script.mdm.conf": "8e4c296d3c4fe68126713283a70e8768",
+    "script.mdm.conf": "23ca795b657134fe1cac13974518c2ff",
     "script.mdm.core": "aeac1fc74c846961ab567b3aee53bba1",
     "script.mdm.link": "488acbfab809716217dbadd84fc49155",
     "skin.mdm.skin": "2efac74496a89e7e788014ea962a76a4"
   },
   "files": {
-    "addons.xml": "e76979a77bbe12af82b16728290530c880733ad4ffb91666c6775e24c458be64",
-    "addons.xml.md5": "6a81deb79577b27ecb4d2d34df2aa376e01d18cd6120ba5a7086cf92e08b3d95",
+    "addons.xml": "4c1ae1dd273a56a1e87dc0e80b0dbcb5930db64d8937bc247b7141c04bd3434a",
+    "addons.xml.md5": "96cd4262441a45938e62ff7515353c412f53991ae3f413b079cb8aa7e443300e",
     "index.html": "434ab3b0709d4e17d3aa0884ef3db82c736481d7d85f72b4d5042465d2fa2af8",
     "plugin.video.mdm.flix/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
     "plugin.video.mdm.flix/addon.xml": "b0400c09659a5f26d28338505dd938d1705bc8d9f89a783eb658beb9b58c615c",
@@ -73,15 +73,18 @@
     "repository.mdm.repo.dev/repository.mdm.repo.dev-1.0.1.zip": "318b7682138b9aeaee9e4b4ad63851818fc73d0ed8137db79ea46f7cd7ae8fa8",
     "repository.mdm.repo.dev/repository.mdm.repo.dev-1.0.1.zip.md5": "42231ba0fd88367e951c32450de538ae586d32e07cfc54b3c6066008301fcba2",
     "script.mdm.conf/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
-    "script.mdm.conf/addon.xml": "8ef99fa1fff4e65a9084950dc8bcfdb676bdbccb04682f8f88ce11171fc7871a",
+    "script.mdm.conf/addon.xml": "a968216d5fb7a2faf83653111e7cbf6edd34a32c6caca2cd642c0a3e6392bb76",
     "script.mdm.conf/changelog-0.0.1.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "script.mdm.conf/changelog-0.1.0.txt": "137f7ad97f15c97bebbb772bddd11ccc46b5e29d3c4d383deb2abf8f7f91e097",
+    "script.mdm.conf/changelog-0.2.0.txt": "aa0075b263671992f7e5d87033c1251ce384b0116f29011c3366bb3e83a6a1e8",
     "script.mdm.conf/fanart.jpg": "47a03f89df3536f1f8424a6a088dd41a30c26247803619b94f65156b761f6202",
     "script.mdm.conf/icon.png": "39974b1f96398437e39a443b63688c3eb953b10c40428915d595409228fe5458",
     "script.mdm.conf/script.mdm.conf-0.0.1.zip": "54ecabccdd1a9f9e7b0c26f7aa7f0e1630e2a4c92e0ee9e2b0780d6d80704a5d",
     "script.mdm.conf/script.mdm.conf-0.0.1.zip.md5": "a8311d9aa27ccaf6f4b03077f5b60fc4b59319fada59415b5096a8db1f7dd02c",
     "script.mdm.conf/script.mdm.conf-0.1.0.zip": "82c73c139295fc4d9825e0a2402fa72581600f3782bd27dcb4390fc1356bb7cd",
     "script.mdm.conf/script.mdm.conf-0.1.0.zip.md5": "13c68d846afddd0d951b6414ecfe9bef8af58ad64c2891c9eac34a0bb60f7818",
+    "script.mdm.conf/script.mdm.conf-0.2.0.zip": "34bd99f5ca4f5ab131cfd3f5c78010fe1ac3cb3267994fcb571d30fd7d0e402e",
+    "script.mdm.conf/script.mdm.conf-0.2.0.zip.md5": "1bc78e83a608fe46f497c87f2019055f7029c9c609d3ff32fbe439acad4f84a4",
     "script.mdm.core/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
     "script.mdm.core/addon.xml": "6f1e79f23cda018d9c77fd55ea822370c2d3d3b7fe3c41d2aebd656375f52d55",
     "script.mdm.core/changelog-0.1.2.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",

@@ -47,7 +47,7 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.mdm.conf" name="MDM Conf" version="0.1.0" provider-name="MDMAinsley">
+</addon><addon id="script.mdm.conf" name="MDM Conf" version="0.2.0" provider-name="MDMAinsley">
 	   
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -57,7 +57,7 @@
   
   <extension point="xbmc.addon.metadata">
     <summary>MDM setup and configuration hub</summary>
-    <description>Check addon readiness, guide catalogue and provider setup, open account tools and view device information.</description>
+    <description>Setup hub with portable configuration builds, Koofr/WebDAV upload and download, validated previews and recoverable restore.</description>
     <platform>all</platform>
     <assets>
       <icon>icon.png</icon>
