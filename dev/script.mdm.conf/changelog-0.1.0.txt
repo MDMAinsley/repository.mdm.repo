@@ -1,0 +1,6 @@
+0.1.0
+- Standalone setup hub with addon installation/enabled/version status.
+- Catalogue, provider/source-mode and local AllDebrid configuration readiness.
+- Guided setup and direct settings/account-menu navigation.
+- Read-only platform, memory and current screen information.
+- Unknown/missing settings recovery and credential-free status output.
