@@ -1,0 +1,22 @@
+0.3.0
+Device-local profiles, reversible tuning, bounded worker/search/request settings and reported-quality limits. Light Flix artwork reduces image size and omits catalogue fanart. Unknown quality is configurable. TV/decoder capability is not inferred from the Kodi screen. Portable builds exclude device tuning; external scraper requests may finish after a deadline. No bandwidth ranking or cache/widget tuning in this release.
+
+0.2.1
+- Fix skin restore/recovery: verify saved values instead of requiring a true RPC result.
+- Skip unchanged settings and compare numeric addon values semantically.
+- New restores journal only changed settings; existing 0.2.0 journals remain recoverable.
+- Recovery restores available settings and retains pending failures with safe setting identifiers.
+- Add Restore diagnostics with no setting values or credentials.
+
+0.2.0
+- Portable configuration builds: supported addon settings, inventory and safe skin/interface preferences.
+- Koofr / HTTPS WebDAV storage: verified uploads, listing and validated downloads.
+- Destination preview, prerequisite checks and journalled restore/recovery.
+- Account credentials, URLs, local paths, binaries, databases and custom artwork excluded.
+
+0.1.0
+- Standalone setup hub with addon installation/enabled/version status.
+- Catalogue, provider/source-mode and local AllDebrid configuration readiness.
+- Guided setup and direct settings/account-menu navigation.
+- Read-only platform, memory and current screen information.
+- Unknown/missing settings recovery and credential-free status output.
