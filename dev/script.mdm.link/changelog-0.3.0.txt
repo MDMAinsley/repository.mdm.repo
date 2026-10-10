@@ -1,0 +1,19 @@
+0.3.0
+Connection speed, maximum reported GiB, explicit missing-metadata controls, estimated average bitrate with 25% reserve, and Quality/Connection/Smallest ordering. Debrid priority preserved; manual selection and single-source autoplay use the same limits. Device-local preferences; no speed probe or stability guarantee. Whole episode-pack sizes do not produce episode bitrate estimates. Conf provides preview/apply/undo for both addons.
+
+0.2.0
+Device-local profiles, reversible tuning, bounded worker/search/request settings and reported-quality limits. Light Flix artwork reduces image size and omits catalogue fanart. Unknown quality is configurable. TV/decoder capability is not inferred from the Kodi screen. Portable builds exclude device tuning; external scraper requests may finish after a deadline. No bandwidth ranking or cache/widget tuning in this release.
+
+0.1.1
+- Focus episode searches by coordinates/title before the general show fallback.
+- Stable Archive hit ordering, five-item metadata budget and multi-value year matching.
+- Safe post-filter free/debrid result counts in diagnostics.
+
+0.1.0
+- Versioned source-search and selected-source resolution API, exported as a Kodi module.
+- Free, Debrid and Combined modes; enabled debrid prioritised.
+- Internet Archive direct-video and Torrentio torrent-metadata adapters.
+- Three configurable Stremio-compatible stream-provider slots.
+- Bounded concurrent searches, duplicate removal, partial results and secret-free diagnostics.
+- Shared AllDebrid resolver, account menu and one-time Flix credential import inside Kodi.
+- Provider-aware Flix integration; initial provider/service coverage documented in README.
