@@ -1,0 +1,42 @@
+0.7.0
+Unified mixed film/TV search; direct movie/episode playback-mode links with context-menu information.
+
+0.6.0
+Add quiet bounded TMDB movie/TV home widgets; existing browsing and playback unchanged.
+
+0.5.0
+Connection speed, maximum reported GiB, explicit missing-metadata controls, estimated average bitrate with 25% reserve, and Quality/Connection/Smallest ordering. Debrid priority preserved; manual selection and single-source autoplay use the same limits. Device-local preferences; no speed probe or stability guarantee. Whole episode-pack sizes do not produce episode bitrate estimates. Conf provides preview/apply/undo for both addons.
+
+0.4.0
+Device-local profiles, reversible tuning, bounded worker/search/request settings and reported-quality limits. Light Flix artwork reduces image size and omits catalogue fanart. Unknown quality is configurable. TV/decoder capability is not inferred from the Kodi screen. Portable builds exclude device tuning; external scraper requests may finish after a deadline. No bandwidth ranking or cache/widget tuning in this release.
+
+0.3.1
+- Mixed source lists expose AllDebrid, Free and All sources folders with counts.
+- Source folders reuse the current search without running providers again.
+- Expired/replaced source folders recover safely; explain debrid-only search results.
+
+0.3.0
+- Real MDM Link integration with free/debrid/combined source modes and provider settings.
+- Shared AllDebrid implementation provided by Link 0.1.0; CocoScrapers remains selectable.
+- One-time account import into Link; Tools account actions follow the selected provider.
+- Free/direct labels, account-independent free playback and Link status diagnostics.
+- Link's Archive adapter can search titles without an IMDb ID.
+
+0.2.0 â€” CocoScrapers / AllDebrid playback batch (M2B)
+CocoScrapers enabled-provider adapter, TMDB-to-IMDb metadata and movie/episode playback routes.
+AllDebrid PIN authorisation, masked API key alternative, account check and local disconnect.
+Manual selection and autoplay; selected-source upload/status/files/unlock flow.
+Nested torrent file matching, Specials, multiple matching-file selection and cancellation.
+Provider-aware resolving, malformed-source rejection, debrid-first ordering and expiring atomic sessions.
+Meaningful settings and status diagnostics; no bulk cache-probe uploads.
+Native ordinary HLS playback and optional InputStream Adaptive for DASH.
+Historical batch: all six FLIX-PC-02 checks passed as reported on PC.
+
+0.1.0 â€” TMDB browsing batch (M2A)
+Real popular/trending movie and TV catalogues, movie/TV search, paging,
+TV seasons (including Specials) and episode lists, artwork and metadata.
+TMDB application credentials/language settings; shared Core response cache.
+Clear configuration/network/no-results handling and TMDB credits.
+Catalogue details preserve movie/show IDs and episode coordinates.
+Real-title playback awaits provider integration; demo stream remains in Tools.
+Requires MDM Core 1.0.0. Historical batch: all six FLIX-PC-01 checks passed as reported on PC.
