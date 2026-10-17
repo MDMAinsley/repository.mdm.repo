@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addon id="skin.mdm.skin" name="MDM Skin" version="0.2.1" provider-name="MDMAinsley">
+<addon id="skin.mdm.skin" name="MDM Skin" version="0.3.0" provider-name="MDMAinsley">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="xbmc.gui" version="5.18.0" />
-    <import addon="plugin.video.mdm.flix" version="0.7.0" />
+    <import addon="plugin.video.mdm.flix" version="0.10.0" />
   </requires>
   <extension point="xbmc.gui.skin">
     <res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
