@@ -73,7 +73,7 @@ jobs:
           for channel in (site, site / "dev"):
               index_path = channel / "addons.xml"
               original = index_path.read_text(encoding="utf-8")
-              pattern = r'<addon\s+id="skin\.mdm\.skin"\b[\s\S]*?</addon>'
+              pattern = r'<addon\s+id="skin\.mdm\.skin"[\s\S]*?</addon>'
               updated, replacements = re.subn(pattern, lambda _: source_addon.strip(), original, count=1)
               assert replacements == 1, "Expected exactly one skin record in " + str(index_path)
               ET.fromstring(updated)
