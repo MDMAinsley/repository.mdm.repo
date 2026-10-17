@@ -1,0 +1,12 @@
+0.2.0
+Repair first-load widget updates and empty-row focus; use native playable/folder/context handling and playback-mode refresh.
+
+0.1.1
+Keep adaptive artwork/mode settings device-local and excluded from portable builds.
+
+0.1.0
+First usable Kodi 22 MDM home with artwork/basic/auto modes and complete Estuary dialogs/views/playback.
+
+
+0.2.1 — 17 October 2026
+Remove the home-only 175-pixel context-menu translation, which moved the menu after Kodi computed its screen bounds and clipped TV-row menu actions. Keep Kodi positioning, scrolling and the existing film/TV row layout. DialogContextMenu.xml now intentionally differs from the pinned Estuary foundation by removal of that translation.
