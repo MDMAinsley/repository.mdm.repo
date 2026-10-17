@@ -7,8 +7,8 @@
       "version": "1.0.1"
     },
     "plugin.video.mdm.flix": {
-      "commit": "36afc5aa664a6c549cac1c1cae1b91e8c04d4a0a",
-      "version": "0.10.1"
+      "commit": "3c78b59a7d0d7522e6bb1602e65b1bf60c5d2c96",
+      "version": "0.10.2"
     },
     "script.mdm.conf": {
       "commit": "8ef348e7b1016666f28231e3fe5e44bbcf0cd0b3",
@@ -29,18 +29,18 @@
   },
   "archives": {
     "repository.mdm.repo": "3218bf167e5988f239d1fc46de0d80bd",
-    "plugin.video.mdm.flix": "19b6ef1d151983a8545006d2692a1a04",
+    "plugin.video.mdm.flix": "7e09ba7d72a8a91666549a3ae2581cec",
     "script.mdm.conf": "347e8c7eb6d7717d832da3a5e798a4ae",
     "script.mdm.core": "aeac1fc74c846961ab567b3aee53bba1",
     "script.mdm.link": "3b7714a1077523cd4fe755e2ba152875",
     "skin.mdm.skin": "215a74360052e25638e264230c19e12f"
   },
   "files": {
-    "addons.xml": "1bd9aba5c06f2b2fa47fea2af8cee6bdee1b59d71d23ee9dcc18675301ad5cbc",
-    "addons.xml.md5": "0eb354b35e5d08816adfe072c252ad51614e7cd9cadcd2827803b7db98452064",
+    "addons.xml": "9a93661be16f9aa7c6424ef4c26aac77f310f86cf4852ee218c42d5b307f95a8",
+    "addons.xml.md5": "d04db4167b2372bc18b2a3b1e8072cfaff0fc6ad9bfe41b265ecd4c32fa26a0a",
     "index.html": "434ab3b0709d4e17d3aa0884ef3db82c736481d7d85f72b4d5042465d2fa2af8",
     "plugin.video.mdm.flix/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
-    "plugin.video.mdm.flix/addon.xml": "e9da80a7999e259ef5806c3570d26ba0f7ceb3ed6b11945086b80729f4fd61a0",
+    "plugin.video.mdm.flix/addon.xml": "c1ee3de0472a1056e53423682c05a9df98c3c409753dcdf601474de25e08407a",
     "plugin.video.mdm.flix/changelog-0.0.28.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "plugin.video.mdm.flix/changelog-0.1.0.txt": "4d66230035efe28bc57dc6c8704408058cfc2f350608efd050624ae32ee45262",
     "plugin.video.mdm.flix/changelog-0.10.0.txt": "9cc974b4e72f33c4d4965ef9e3d605057df639319b407fde929a310079150be8",
@@ -186,6 +186,9 @@
     "skin.mdm.skin/changelog-0.3.1.txt": "d908720b99984f8dc7e1a4744cf3985105da6090cf97b97b8c7aa70898393ed6",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.10.1.zip": "852a34fc924cf5cfaf35466bfbdb4576ffbe6432e4fb6918a011e13bf3448a53",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.10.1.zip.md5": "4596e30de77ee804dbffe7fbce684b66e7a10ea9084642756388397bdc684070",
-    "plugin.video.mdm.flix/changelog-0.10.1.txt": "d70a492957284a197cbdabe66c2039375b8505090fd3cb1a6233af5b9273a1b4"
+    "plugin.video.mdm.flix/changelog-0.10.1.txt": "d70a492957284a197cbdabe66c2039375b8505090fd3cb1a6233af5b9273a1b4",
+    "plugin.video.mdm.flix/plugin.video.mdm.flix-0.10.2.zip": "ed676d8cb9438819abe1228165ce341f728e6c2c7f34306ae0735bc578ff8445",
+    "plugin.video.mdm.flix/plugin.video.mdm.flix-0.10.2.zip.md5": "7d6f65561ecbbee03885a487edc47478920e5a0894f42565febe695ad642f401",
+    "plugin.video.mdm.flix/changelog-0.10.2.txt": "fe915dd9fd7f0b911fb96aff7d340aff0aacb56aa8642b47d12bba563c0d7b68"
   }
 }
