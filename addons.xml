@@ -24,17 +24,21 @@
     </assets>
   </extension>
   
-</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.0.28" provider-name="MDM">
+</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.10.0" provider-name="MDM">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.mdm.core" version="0.1.0" />
+        <import addon="script.mdm.core" version="1.0.0" />
+        <import addon="script.mdm.link" version="0.4.1" />
 		<import addon="inputstream.adaptive" optional="true" />
+        <import addon="script.module.cocoscrapers" version="1.0.39" optional="true" />
     </requires>
 
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
+
+    <extension point="xbmc.service" library="service.py" start="startup" />
 
     <extension point="xbmc.addon.metadata">
         <summary>MDM Flix</summary>
@@ -45,7 +49,7 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="script.mdm.conf" name="MDM Conf" version="0.0.1" provider-name="MDMAinsley">
+</addon><addon id="script.mdm.conf" name="MDM Conf" version="0.4.0" provider-name="MDMAinsley">
 	   
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -54,8 +58,8 @@
   <extension point="xbmc.python.script" library="default.py" />
   
   <extension point="xbmc.addon.metadata">
-    <summary>MDM Conf Wizard Addon</summary>
-    <description>Desc.</description>
+    <summary>MDM setup and configuration hub</summary>
+    <description>Setup hub with portable configuration builds, Koofr/WebDAV upload and download, validated previews and recoverable restore.</description>
     <platform>all</platform>
     <assets>
       <icon>icon.png</icon>
@@ -63,7 +67,7 @@
     </assets>
   </extension>
   
-</addon><addon id="script.mdm.core" name="MDM Core" version="0.1.2" provider-name="MDMAinsley">
+</addon><addon id="script.mdm.core" name="MDM Core" version="1.0.0" provider-name="MDMAinsley">
 
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
@@ -83,17 +87,18 @@
     </assets>
   </extension>
 
-</addon><addon id="script.mdm.link" name="MDM Link" version="0.0.1" provider-name="MDMAinsley">
+</addon><addon id="script.mdm.link" name="MDM Link" version="0.4.1" provider-name="MDMAinsley">
 	   
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
   
   <extension point="xbmc.python.script" library="default.py" />
+  <extension point="xbmc.python.module" library="lib" />
   
   <extension point="xbmc.addon.metadata">
     <summary>MDM Link Scraper Addon</summary>
-    <description>Desc.</description>
+    <description>Extensible movie and episode source search, free/direct and AllDebrid modes, with provider settings and diagnostics.</description>
     <platform>all</platform>
     <assets>
       <icon>icon.png</icon>
@@ -101,23 +106,31 @@
     </assets>
   </extension>
   
-</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.0.2" provider-name="MDMAinsley">
-	   
+</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.3.0" provider-name="MDMAinsley">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
+    <import addon="xbmc.gui" version="5.18.0" />
+    <import addon="plugin.video.mdm.flix" version="0.10.0" />
   </requires>
-  
   <extension point="xbmc.gui.skin">
+    <res width="1920" height="1440" aspect="4:3" default="false" folder="xml" />
+    <res width="1920" height="1280" aspect="3:2" default="false" folder="xml" />
+    <res width="1920" height="1200" aspect="16:10" default="false" folder="xml" />
+    <res width="2040" height="1080" aspect="17:9" default="false" folder="xml" />
+    <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+    <res width="2560" height="1080" aspect="21:9" default="false" folder="xml" />
+    <res width="2338" height="1080" aspect="19.5:9" default="false" folder="xml" />
+    <res width="2160" height="1080" aspect="18:9" default="false" folder="xml" />
   </extension>
-  
   <extension point="xbmc.addon.metadata">
-    <summary>MDM Skin Addon</summary>
-    <description>Desc.</description>
+    <summary>MDM artwork home with an adaptive basic mode</summary>
+    <description>Kodi 22 development skin: movie/TV artwork rows, Flix navigation, setup and standard Kodi playback controls. Personal lists and ratings are provided by Flix 0.9.0; viewing progress remains planned.</description>
     <platform>all</platform>
     <assets>
       <icon>icon.png</icon>
       <fanart>fanart.jpg</fanart>
     </assets>
+    <license>GPL-2.0; CC-BY-SA-4.0; font licenses in fonts/</license>
+    <source>https://github.com/MDMAinsley/skin.mdm.skin</source>
   </extension>
-  
 </addon></addons>

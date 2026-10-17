@@ -1,0 +1,8 @@
+1.0.0 development candidate (not published)
+- Preserve existing files when serialization, writes or replacement fail.
+- Separate cache keys with SHA256 filenames; validate payloads and expiry.
+- Report initialization failure when profile directories cannot be created.
+- Prioritize Kodi Android detection over the underlying Linux platform name.
+- Omit credentials and exception text from HTTP failure diagnostics.
+- Preserve existing helper names and Flix logging integration.
+- Synchronize addon/module/network version and localize initialization messages.

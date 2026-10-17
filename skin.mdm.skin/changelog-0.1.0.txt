@@ -1,0 +1,2 @@
+0.1.0
+First usable Kodi 22 MDM home with artwork/basic/auto modes and complete Estuary dialogs/views/playback.

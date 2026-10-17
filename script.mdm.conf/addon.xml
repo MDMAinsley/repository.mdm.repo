@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addon id="script.mdm.conf"
 	   name="MDM Conf" 
-	   version="0.0.1"
+	   version="0.4.0"
 	   provider-name="MDMAinsley">
 	   
   <requires>
@@ -11,8 +11,8 @@
   <extension point="xbmc.python.script" library="default.py"/>
   
   <extension point="xbmc.addon.metadata">
-    <summary>MDM Conf Wizard Addon</summary>
-    <description>Desc.</description>
+    <summary>MDM setup and configuration hub</summary>
+    <description>Setup hub with portable configuration builds, Koofr/WebDAV upload and download, validated previews and recoverable restore.</description>
     <platform>all</platform>
     <assets>
       <icon>icon.png</icon>
