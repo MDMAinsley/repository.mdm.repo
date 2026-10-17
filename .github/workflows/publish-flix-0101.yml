@@ -1,0 +1,134 @@
+name: Publish MDM Flix 0.10.1
+
+on:
+  push:
+    paths:
+      - .github/workflows/publish-flix-0101.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout published GitHub Pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: published
+          persist-credentials: true
+
+      - name: Checkout MDM Flix source
+        uses: actions/checkout@v4
+        with:
+          repository: MDMAinsley/plugin.video.mdm.flix
+          ref: main
+          path: flix-source
+
+      - name: Build and publish Flix to both Kodi channels
+        env:
+          TMDB_PUBLIC_API_KEY: ${{ secrets.TMDB_PUBLIC_API_KEY }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+          import re
+          import shutil
+          import subprocess
+          import xml.etree.ElementTree as ET
+          import zipfile
+
+          source = Path("flix-source")
+          site = Path("published")
+          addon_id = "plugin.video.mdm.flix"
+          version = "0.10.1"
+          xml_source = (source / "addon.xml").read_text(encoding="utf-8")
+          item = ET.fromstring(xml_source)
+          assert item.attrib["id"] == addon_id
+          assert item.attrib["version"] == version
+          # A public v3 API key is embedded in the distributable ZIP, not source Git.
+          # Never print it to Actions logs.
+          import os
+          api_key = os.environ.get("TMDB_PUBLIC_API_KEY", "").strip()
+          assert len(api_key) == 32 and all(ch in "0123456789abcdefABCDEF" for ch in api_key), "Missing/invalid TMDB_PUBLIC_API_KEY secret"
+          injection_path = source / "resources/lib/catalogue/_tmdb_public_key.py"
+          assert not injection_path.exists(), "Refusing to overwrite source key module"
+          injection_path.write_text("DEFAULT_TMDB_API_KEY = " + repr(api_key) + "\\n", encoding="utf-8")
+          assert (site / "addons.xml").exists() and (site / "dev" / "addons.xml").exists()
+          source_commit = subprocess.check_output(["git", "-C", str(source), "rev-parse", "HEAD"], text=True).strip()
+
+          # Build a real Kodi add-on archive, with the addon ID as the top-level folder.
+          archive = site / "_flix-0.10.1-build.zip"
+          with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+              for file in sorted(source.rglob("*")):
+                  if not file.is_file() or ".git" in file.relative_to(source).parts:
+                      continue
+                  z.write(file, str(Path(addon_id) / file.relative_to(source)))
+          with zipfile.ZipFile(archive) as z:
+              names = z.namelist()
+              assert f"{addon_id}/addon.xml" in names
+              assert len(names) >= 30, "Unexpectedly small Flix archive"
+              assert f"{addon_id}/resources/lib/catalogue/_tmdb_public_key.py" in names
+              packaged_key = z.read(f"{addon_id}/resources/lib/catalogue/_tmdb_public_key.py").decode("utf-8")
+              assert repr(api_key) in packaged_key
+              assert "tmdb_api_key" in z.read(f"{addon_id}/resources/lib/catalogue/tmdb.py").decode("utf-8")
+              assert ET.fromstring(z.read(f"{addon_id}/addon.xml")).attrib["version"] == version
+          archive_bytes = archive.read_bytes()
+          md5 = hashlib.md5(archive_bytes).hexdigest()
+          sha256 = lambda b: hashlib.sha256(b).hexdigest()
+          source_addon = re.sub(r"^<\?xml[^>]*>\s*", "", xml_source, count=1)
+
+          for channel in (site, site / "dev"):
+              index_path = channel / "addons.xml"
+              original = index_path.read_text(encoding="utf-8")
+              pattern = r'<addon\s+id="skin\.mdm\.skin"[\s\S]*?</addon>'
+              updated, replacements = re.subn(pattern, lambda _: source_addon.strip(), original, count=1)
+              assert replacements == 1, "Expected exactly one Flix record in " + str(index_path)
+              ET.fromstring(updated)
+              assert 'version="0.10.1"' in updated
+
+              dest = channel / addon_id
+              dest.mkdir(exist_ok=True)
+              zip_name = f"{addon_id}-{version}.zip"
+              zip_path = dest / zip_name
+              shutil.copyfile(archive, zip_path)
+              checksum_path = dest / f"{zip_name}.md5"
+              checksum_path.write_text(md5, encoding="ascii")
+              addon_path = dest / "addon.xml"
+              addon_path.write_text(xml_source, encoding="utf-8")
+              change_path = dest / f"changelog-{version}.txt"
+              change_path.write_text("0.10.1: Built-in application TMDB key for zero-configuration catalogue; custom credentials override.\n", encoding="utf-8")
+
+              index_path.write_text(updated, encoding="utf-8")
+              index_checksum_path = channel / "addons.xml.md5"
+              index_checksum_path.write_text(hashlib.md5(updated.encode("utf-8")).hexdigest(), encoding="ascii")
+
+              manifest_path = channel / "release-manifest.json"
+              manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+              manifest["source"][addon_id] = {"commit": source_commit, "version": version}
+              manifest["archives"][addon_id] = md5
+              for path in (zip_path, checksum_path, addon_path, change_path, index_path, index_checksum_path):
+                  manifest["files"][path.relative_to(channel).as_posix()] = sha256(path.read_bytes())
+              manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+
+          archive.unlink()
+          print("Published MDM Flix", version, "to Live and Dev, checksum", md5)
+          PY
+
+      - name: Commit generated release
+        shell: bash
+        working-directory: published
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add addons.xml addons.xml.md5 release-manifest.json plugin.video.mdm.flix dev/addons.xml dev/addons.xml.md5 dev/release-manifest.json dev/plugin.video.mdm.flix
+          if git diff --cached --quiet; then
+            echo "No release changes"
+          else
+            git commit -m "Publish MDM Flix 0.10.1 to Live and Dev"
+            git push origin HEAD:gh-pages
+          fi
