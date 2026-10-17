@@ -80,7 +80,7 @@ jobs:
           archive_bytes = archive.read_bytes()
           md5 = hashlib.md5(archive_bytes).hexdigest()
           sha256 = lambda b: hashlib.sha256(b).hexdigest()
-          source_addon = re.sub(r"^<\?xml[^>]*>\s*", "", xml_source, count=1)
+          source_addon = re.sub(r"^<\?xml[^>]*>\s*", "", xml_source.lstrip("\ufeff"), count=1)
 
           for channel in (site, site / "dev"):
               index_path = channel / "addons.xml"
