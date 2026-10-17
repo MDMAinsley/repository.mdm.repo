@@ -68,12 +68,12 @@ jobs:
           archive_bytes = archive.read_bytes()
           md5 = hashlib.md5(archive_bytes).hexdigest()
           sha256 = lambda b: hashlib.sha256(b).hexdigest()
-          source_addon = re.sub(r"^<\\?xml[^>]*>\\s*", "", xml_source, count=1)
+          source_addon = re.sub(r"^<\?xml[^>]*>\s*", "", xml_source, count=1)
 
           for channel in (site, site / "dev"):
               index_path = channel / "addons.xml"
               original = index_path.read_text(encoding="utf-8")
-              pattern = r'<addon\\s+id="skin\\.mdm\\.skin"\\b[\\s\\S]*?</addon>'
+              pattern = r'<addon\s+id="skin\.mdm\.skin"\b[\s\S]*?</addon>'
               updated, replacements = re.subn(pattern, lambda _: source_addon.strip(), original, count=1)
               assert replacements == 1, "Expected exactly one skin record in " + str(index_path)
               ET.fromstring(updated)
@@ -89,7 +89,7 @@ jobs:
               addon_path = dest / "addon.xml"
               addon_path.write_text(xml_source, encoding="utf-8")
               change_path = dest / f"changelog-{version}.txt"
-              change_path.write_text("0.3.1: Minimum xbmc.gui lowered to 5.17.0 for Kodi 21 Omega compatibility testing.\\n", encoding="utf-8")
+              change_path.write_text("0.3.1: Minimum xbmc.gui lowered to 5.17.0 for Kodi 21 Omega compatibility testing.\n", encoding="utf-8")
 
               index_path.write_text(updated, encoding="utf-8")
               index_checksum_path = channel / "addons.xml.md5"
@@ -101,7 +101,7 @@ jobs:
               manifest["archives"][addon_id] = md5
               for path in (zip_path, checksum_path, addon_path, change_path, index_path, index_checksum_path):
                   manifest["files"][path.relative_to(channel).as_posix()] = sha256(path.read_bytes())
-              manifest_path.write_text(json.dumps(manifest, indent=2) + "\\n", encoding="utf-8")
+              manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
           archive.unlink()
           print("Published MDM Skin", version, "to Live and Dev, checksum", md5)
