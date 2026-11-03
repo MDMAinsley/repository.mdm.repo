@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf8'?>
 <addons><addon id="repository.mdm.repo.dev" name="MDM Repo (Development)" version="1.0.1" provider-name="MDMAinsley">
   <extension point="xbmc.addon.repository" name="MDM Repo">
     <dir>
@@ -24,7 +24,7 @@
     </assets>
   </extension>
   
-</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.15.3" provider-name="MDM">
+</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.15.4" provider-name="MDM">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
