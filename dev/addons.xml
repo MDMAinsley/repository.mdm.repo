@@ -24,7 +24,7 @@
     </assets>
   </extension>
   
-</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.15.10" provider-name="MDM">
+</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.15.11" provider-name="MDM">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
