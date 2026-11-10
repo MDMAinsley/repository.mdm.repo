@@ -1,0 +1,51 @@
+name: Publish Kodi repository to Pages
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Stage the repository files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir site
+          git archive --format=tar HEAD -- . ':!.github' | tar -xf - -C site
+          for channel in site site/dev; do
+            test -s "$channel/addons.xml"
+            test "$(md5sum "$channel/addons.xml" | cut -d ' ' -f 1)" = "$(cat "$channel/addons.xml.md5")"
+          done
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: package
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
+        with:
+          timeout: 1800000
