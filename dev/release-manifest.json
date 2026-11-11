@@ -7,8 +7,8 @@
       "version": "1.0.1"
     },
     "plugin.video.mdm.flix": {
-      "commit": "ec537d788532e12352cb0fd34980f7c9066f61a9",
-      "version": "0.17.24"
+      "commit": "fe6a7a3501b676fe9b8067b439c1621acdbf43cf",
+      "version": "0.17.25"
     },
     "script.mdm.conf": {
       "commit": "35bc08ee2cec85064e446c07dbc003ab8463bd60",
@@ -29,18 +29,18 @@
   },
   "archives": {
     "repository.mdm.repo": "3218bf167e5988f239d1fc46de0d80bd",
-    "plugin.video.mdm.flix": "96c8ce5559d6abe29e99cd3afaee1ec8",
+    "plugin.video.mdm.flix": "26cd840c9fdf623c7015424c8ddf21c6",
     "script.mdm.conf": "ec0061b0fab5cfa6a88dae65b3cce11d",
     "script.mdm.core": "aeac1fc74c846961ab567b3aee53bba1",
     "script.mdm.link": "64d3147c28a06134a527b05cedf277da",
     "skin.mdm.skin": "db5dbbe540f7f5a0d1bc0017aa9dde90"
   },
   "files": {
-    "addons.xml": "de841fcb372d4cb0d15e8130f4c9833d0ed3f540a9931ede0de2553c117cf147",
-    "addons.xml.md5": "325c353233560879823daa6bec982ee41335145ef679f5411c5bf95f938bb431",
+    "addons.xml": "001fe80caae795fb358e97f7b17e4169e6d37397bdc18269fffd9de1004fb478",
+    "addons.xml.md5": "3debfa4a077c22bdc061ea4af23c713c99837091efdb583d57d5effbaf879484",
     "index.html": "434ab3b0709d4e17d3aa0884ef3db82c736481d7d85f72b4d5042465d2fa2af8",
     "plugin.video.mdm.flix/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
-    "plugin.video.mdm.flix/addon.xml": "7d28b5a72a0b9d053672a9ce91891653d8a13014356f3d37c050320fc0c3b94d",
+    "plugin.video.mdm.flix/addon.xml": "eee516b4434c507e1ac5f484c81154a71dd109bd740cf3d2ac310a62d7e38920",
     "plugin.video.mdm.flix/changelog-0.0.28.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "plugin.video.mdm.flix/changelog-0.1.0.txt": "4d66230035efe28bc57dc6c8704408058cfc2f350608efd050624ae32ee45262",
     "plugin.video.mdm.flix/changelog-0.10.0.txt": "9cc974b4e72f33c4d4965ef9e3d605057df639319b407fde929a310079150be8",
@@ -168,6 +168,8 @@
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.23.zip.md5": "ffae254cf1cbbb519cec7dda40cec33c7174132fe521b354aa729f6c9aecde62",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.24.zip": "8c7fbbf1eac97e826cb5efd52e69d56fa0d2fd5d2fdbbceebe71b027645e197a",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.24.zip.md5": "f8000fb62971ef09c8db3c3f0581442d74cbbbf83fde635becc8e9fa2f040509",
+    "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.25.zip": "edfcb569950eee22b2295d479ab3f684ab595f530a23add2d241af77441b1ed7",
+    "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.25.zip.md5": "a283e12cadbfb6b65ba8497d41dc0ebd2669d45427e5a02ba18359ae3b835b72",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.3.zip": "0113b63e265bc0373bcd5c90cfb74ad063ceab0410d240066e11d5ed6e57f470",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.3.zip.md5": "ad212d98ced6900191bc66193c6a9924318578648c637b4f6832f19bc176f4a6",
     "plugin.video.mdm.flix/plugin.video.mdm.flix-0.17.4.zip": "8f98c043565a968fa44695cfa2d8042f273c9eceb14b5eae2800b48e8cf6f394",
