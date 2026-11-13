@@ -3,7 +3,7 @@
   "channel": "dev",
   "source": {
     "repository.mdm.repo": {
-      "commit": "26ae39e9f18827b6e081bbd634e2bcbe071380b7",
+      "commit": "9ec437f3488cea50fe4163553684a05bad4d7ac0",
       "version": "1.0.1"
     },
     "plugin.video.mdm.flix": {
@@ -27,8 +27,8 @@
       "version": "0.3.19"
     },
     "service.subtitles.mdm.subs": {
-      "commit": "26ae39e9f18827b6e081bbd634e2bcbe071380b7",
-      "version": "0.1.1"
+      "commit": "9ec437f3488cea50fe4163553684a05bad4d7ac0",
+      "version": "0.2.0"
     }
   },
   "archives": {
@@ -38,11 +38,11 @@
     "script.mdm.core": "aeac1fc74c846961ab567b3aee53bba1",
     "script.mdm.link": "64d3147c28a06134a527b05cedf277da",
     "skin.mdm.skin": "a3b97418ac3433f0ea76bfa0aeccda77",
-    "service.subtitles.mdm.subs": "b273e12d286b17c003efcb1cdc481618"
+    "service.subtitles.mdm.subs": "693cc195fa0596aa4ba8c11bd96a1389"
   },
   "files": {
-    "addons.xml": "02f527386ee35705aa8e026b042178bc442ad294d67dfae9e36686d9146cc4d6",
-    "addons.xml.md5": "5997691c6f89f9dd7941c8ab3d52cf644bb4746ae7112540ba127862a6bfe317",
+    "addons.xml": "681ed2ed3565aa3c1506b158339e03717a0e89a073c0b501e4ddf1956e6d8e4d",
+    "addons.xml.md5": "272d5b00c24a695f092f20b5b8f91b81e32b96837d51060986805f85b355c9b8",
     "index.html": "434ab3b0709d4e17d3aa0884ef3db82c736481d7d85f72b4d5042465d2fa2af8",
     "plugin.video.mdm.flix/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
     "plugin.video.mdm.flix/addon.xml": "f4536377134cab37da70d038d8ca34c676e331936f7717e0e58f50ea5b5e3ec8",
@@ -331,11 +331,13 @@
     "script.mdm.link/script.mdm.link-0.4.8.zip.md5": "da699ac25b56b31abc0009bb7604214f285710a747d9563e7e6c5854b320df95",
     "script.mdm.link/script.mdm.link-0.4.9.zip": "c7b73bf961966499b433e467951cb4e6a669fa5d62635d3506a1ac9039c5543a",
     "script.mdm.link/script.mdm.link-0.4.9.zip.md5": "df1fa4714b1f580552093a003de010a6b7b47a7b017ed028829d20fe2ad27ba0",
-    "service.subtitles.mdm.subs/addon.xml": "766391c69026e5b834f9eba511ce2e8b0edd79317dc397c4e8f8dbcfc9879258",
+    "service.subtitles.mdm.subs/addon.xml": "26ede0ae4576b585079c61433966540eaa95c57b681bea4219cc0076e2dda7b3",
     "service.subtitles.mdm.subs/fanart.jpg": "5b1be2e83ad86a38d183221d83931410e8abaf079cb8e6f8bedf333096a2ff3a",
     "service.subtitles.mdm.subs/icon.png": "c9cb1fd580b648cf09afd2b0f7c7bdc2286b37497b8d852e88440ecd6501d11b",
     "service.subtitles.mdm.subs/service.subtitles.mdm.subs-0.1.1.zip": "d8c4caa203a20a85e1b231793face4656498af6f2e9b8fbc104d616ddf8e08e4",
     "service.subtitles.mdm.subs/service.subtitles.mdm.subs-0.1.1.zip.md5": "2a7016dfdb09c0dac44554e23397ed40e7908ef2e9cd1277a363458ee8a8044b",
+    "service.subtitles.mdm.subs/service.subtitles.mdm.subs-0.2.0.zip": "1a9857f153242abe1f7a4ce3c1e874f46b6af19435030e4bc8c74785adc67acd",
+    "service.subtitles.mdm.subs/service.subtitles.mdm.subs-0.2.0.zip.md5": "0be409cce3b9615f2f9328631f2b2ef152d643371b3174c9e7a3e57c8a61a82d",
     "skin.mdm.skin/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
     "skin.mdm.skin/addon.xml": "6ab7771cd74c617174567223ccee97d9f7325316725d4f85dd978516e7a5a77d",
     "skin.mdm.skin/changelog-0.0.2.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
