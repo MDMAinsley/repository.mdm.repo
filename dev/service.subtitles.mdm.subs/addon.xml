@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="service.subtitles.mdm.subs" name="MDM Subs" version="0.1.1" provider-name="MDMAinsley">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.subtitle.module" library="default.py" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Search for film and episode subtitles</summary>
+    <description lang="en_GB">Find and download subtitles from OpenSubtitles using Kodi's subtitle picker.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>

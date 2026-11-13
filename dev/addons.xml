@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <addons><addon id="repository.mdm.repo.dev" name="MDM Repo (Development)" version="1.0.1" provider-name="MDMAinsley">
   <extension point="xbmc.addon.repository" name="MDM Repo">
     <dir>
@@ -132,5 +132,19 @@
     </assets>
     <license>GPL-2.0; CC-BY-SA-4.0; font licenses in fonts/</license>
     <source>https://github.com/MDMAinsley/skin.mdm.skin</source>
+  </extension>
+</addon><addon id="service.subtitles.mdm.subs" name="MDM Subs" version="0.1.1" provider-name="MDMAinsley">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+  </requires>
+  <extension point="xbmc.subtitle.module" library="default.py" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Search for film and episode subtitles</summary>
+    <description lang="en_GB">Find and download subtitles from OpenSubtitles using Kodi's subtitle picker.</description>
+    <platform>all</platform>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>fanart.jpg</fanart>
+    </assets>
   </extension>
 </addon></addons>
