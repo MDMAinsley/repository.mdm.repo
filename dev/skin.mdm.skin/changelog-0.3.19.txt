@@ -1,0 +1,67 @@
+0.3.19
+Show the installed MDM Subs version beside MDM Skin on Home.
+
+0.3.18
+Wait for Kodi to finish installing MDM add-ons before opening Flix from Home. Show update progress while waiting.
+
+0.3.17
+Centre the trailer shortcut beneath the preview, with bold Press UP text and keyboard or Fire TV icons.
+
+0.3.16
+Add a Next Episodes row and sidebar entry directly below Continue Watching.
+
+0.3.15
+Open fresh input when selecting Search from Home.
+
+0.3.14
+Add Auto, Full, Balanced, Light and Basic Home modes. Full enables automatic previews on manually selected devices.
+
+0.3.13
+Place previews in the featured artwork panel and route Up directly to the playing trailer.
+
+0.3.12
+Show muted Home previews and let Up take the playing trailer fullscreen.
+
+0.3.11
+Recover missing Home artwork with layered poster, still and backdrop fallbacks.
+
+0.3.10
+Coordinate the Home menu and selected row transitions so inactive rows fade before they move.
+
+0.3.9
+Smooth the menu-to-row handoff and open the dedicated Flix title view from Artwork Home.
+
+0.3.8
+Focus the active Home row in a larger browsing view, with one selection outline and predictable remote navigation.
+
+0.3.7
+Add a featured title area, Continue Watching and the selected Home list to Artwork mode.
+
+0.3.6
+Refresh also requests an MDBList viewing progress update when sync is enabled in Flix.
+
+0.3.5
+Open the selected Public or Development MDM repository from home below Refresh.
+
+0.3.4
+Choose an existing home list shortcut and a preset or custom home accent.
+
+0.3.3
+Show live installed MDM versions and simplify home navigation. Refresh checks Kodi repositories and reloads home.
+
+0.2.0
+Repair first-load widget updates and empty-row focus; use native playable/folder/context handling and playback-mode refresh.
+
+0.1.1
+Keep adaptive artwork/mode settings device-local and excluded from portable builds.
+
+0.1.0
+First usable Kodi 22 MDM home with artwork/basic/auto modes and complete Estuary dialogs/views/playback.
+
+
+0.2.1 — 17 October 2026
+Remove the home-only 175-pixel context-menu translation, which moved the menu after Kodi computed its screen bounds and clipped TV-row menu actions. Keep Kodi positioning, scrolling and the existing film/TV row layout. DialogContextMenu.xml now intentionally differs from the pinned Estuary foundation by removal of that translation.
+
+
+0.3.0 — 17 October 2026
+Device-local Resume/Start again, Continue Watching and watched/history controls. Only tagged MDM movie/episode video after AV start is observed; periodic checkpoints every 15 seconds, local progress by stable catalogue identity, no source URLs or network sync. Home has Continue Watching/My List shortcuts; Kodi favourites remain under Flix home. Saving personal lists/ratings remains separate. Movies/episodes under 60 seconds or unknown duration never auto-complete; known videos at >=90% are marked watched. Progress is device-local and excluded from current Conf portable builds. MDBList is the recommended future connected tracker; linking/sync and self-hosting are not implemented in this release.
