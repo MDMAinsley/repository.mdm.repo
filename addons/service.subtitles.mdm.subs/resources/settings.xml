@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-  <category label="OpenSubtitles">
+  <category label="Providers">
+    <setting id="enable_open" type="bool" label="OpenSubtitles" default="true" />
     <setting id="api_key" type="text" option="hidden" label="OpenSubtitles API key" default="" />
+    <setting id="open_username" type="text" label="OpenSubtitles username (optional)" default="" />
+    <setting id="open_password" type="text" option="hidden" label="OpenSubtitles password (optional)" default="" />
+    <setting id="enable_addic" type="bool" label="Addic7ed" default="true" />
+    <setting id="enable_bs" type="bool" label="BSPlayer" default="true" />
+    <setting id="enable_pod" type="bool" label="Podnapisi" default="true" />
+    <setting id="enable_dl" type="bool" label="SubDL" default="true" />
+    <setting id="subdl_key" type="text" option="hidden" label="SubDL API key" default="" />
+    <setting id="enable_source" type="bool" label="SubSource" default="true" />
+    <setting id="subsource_key" type="text" option="hidden" label="SubSource API key" default="" />
   </category>
 </settings>

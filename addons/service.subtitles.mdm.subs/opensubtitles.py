@@ -7,7 +7,7 @@ from urllib.request import Request, urlopen
 
 
 API = 'https://api.opensubtitles.com/api/v1'
-USER_AGENT = 'MDM Subs v0.1.0'
+USER_AGENT = 'MDM Subs v0.2.0'
 LIMIT = 2 * 1024 * 1024
 TIMECODE = re.compile(r'^\d{2,}:\d{2}:\d{2}[,.]\d{3}\s+-->\s+\d{2,}:\d{2}:\d{2}[,.]\d{3}', re.M)
 
@@ -36,15 +36,19 @@ def read(request):
 class OpenSubtitles:
     def __init__(self, key):
         self.key = key.strip()
+        self.api = API
+        self.token = ''
         if not self.key:
             raise SubtitleError('Enter your OpenSubtitles API key in MDM Subs settings.')
 
     def request(self, path, query=None, body=None):
-        request = Request(API + path + ('?' + urlencode(sorted(query.items())) if query else ''),
+        request = Request(self.api + path + ('?' + urlencode(sorted(query.items())) if query else ''),
                           data=json.dumps(body).encode() if body else None,
                           headers={'User-Agent': USER_AGENT, 'Accept': 'application/json',
                                    'Content-Type': 'application/json'})
         request.add_unredirected_header('Api-Key', self.key)
+        if self.token:
+            request.add_unredirected_header('Authorization', 'Bearer '+self.token)
         try:
             result = json.loads(read(request))
         except (ValueError, UnicodeError):
@@ -53,7 +57,7 @@ class OpenSubtitles:
             raise SubtitleError('OpenSubtitles returned an unreadable response.')
         return result
 
-    def search(self, query, preferred, release):
+    def search(self, query, preferred, release, *, include_sync=False):
         rows = self.request('/subtitles', query=query).get('data', [])
         if not isinstance(rows, list):
             raise SubtitleError('OpenSubtitles returned an unreadable search result.')
@@ -86,13 +90,23 @@ class OpenSubtitles:
                 name = ' '.join(name.split())[:180]
                 same_release = bool(release and normalise(name) == release)
                 count = attributes.get('download_count')
-                score = (language == preferred, same_release, count if type(count) is int else 0)
+                matched = bool(query.get('moviehash') and attributes.get('moviehash_match') is True)
+                score = (language == preferred, matched, same_release, count if type(count) is int else 0)
                 file_id = file['file_id']
                 if file_id not in matches or score > matches[file_id][0]:
-                    matches[file_id] = (score, file_id, language, name, attributes.get('hearing_impaired') is True)
-        return sorted(matches.values(), reverse=True)[:50]
+                    matches[file_id] = (score, file_id, language, name, attributes.get('hearing_impaired') is True, matched)
+        rows = sorted(matches.values(), reverse=True)[:50]
+        return rows if include_sync else [row[:-1] for row in rows]
 
-    def download(self, file_id):
+    def download(self, file_id, username='', password=''):
+        if username and password:
+            login = self.request('/login', body={'username': username, 'password': password})
+            self.token = login.get('token', '')
+            if not isinstance(self.token, str) or not self.token:
+                raise SubtitleError('OpenSubtitles sign-in failed. Check your username and password.')
+            host = login.get('base_url', '')
+            if isinstance(host, str) and re.fullmatch(r'[a-z0-9-]+\.opensubtitles\.com', host):
+                self.api = 'https://'+host+'/api/v1'
         result = self.request('/download', body={'file_id': file_id, 'sub_format': 'srt'})
         link = result.get('link')
         if not isinstance(link, str) or urlsplit(link).scheme != 'https' or not urlsplit(link).hostname:
