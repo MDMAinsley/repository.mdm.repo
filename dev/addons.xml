@@ -24,7 +24,7 @@
     </assets>
   </extension>
   
-</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.17.33" provider-name="MDM">
+</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.17.34" provider-name="MDM">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -106,7 +106,7 @@
     </assets>
   </extension>
   
-</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.3.20" provider-name="MDMAinsley">
+</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.3.21" provider-name="MDMAinsley">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="xbmc.gui" version="5.17.0" />
