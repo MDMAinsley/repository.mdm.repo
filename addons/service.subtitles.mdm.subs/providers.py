@@ -109,31 +109,47 @@ class Providers:
             raise SubtitleError('Enable a provider or enter its API key in MDM Subs settings.')
         executor = ThreadPoolExecutor(max_workers=len(enabled))
         tasks = {executor.submit(getattr(self, name), media): name for name in enabled}
-        results, failures, completed = [], [], 0
+        results, failures, completed, open_error = [], [], 0, None
         try:
             done, pending = wait(tasks, timeout=9)
             failures.extend(NAMES[tasks[task]] for task in pending)
+            if any(tasks[task] == 'open' for task in pending):
+                open_error = 'OpenSubtitles did not respond in time. Try again shortly.'
             for task in done:
                 try:
                     results.extend(task.result())
                     completed += 1
                 except (SubtitleError, OSError, ValueError, TypeError, KeyError, AttributeError, ET.ParseError):
                     failures.append(NAMES[tasks[task]])
+                    if tasks[task] == 'open':
+                        error = task.exception()
+                        if isinstance(error, SubtitleError):
+                            open_error = str(error)
         finally:
             executor.shutdown(wait=False)
+        ranked = rank(results, media)
+        if not ranked and open_error:
+            raise SubtitleError(open_error)
         if not completed:
             raise SubtitleError('Subtitle providers are unavailable. Check your connection and provider keys.')
-        return rank(results, media), failures
+        return ranked, failures
 
     def open(self, media):
         client = OpenSubtitles(self.setting('api_key'))
         query = media['query'].copy()
         if media['hash']:
             query['moviehash'] = media['hash']
+        release = normalise(media['release'])
+        rows = client.search(query, media['preferred'], release, include_sync=True)
+        if not rows and media['title'] and 'parent_tmdb_id' in query:
+            alternate = {key: value for key, value in query.items()
+                         if key not in ('parent_tmdb_id', 'tmdb_id', 'imdb_id')}
+            alternate['query'] = media['title']
+            rows = client.search(alternate, media['preferred'], release, include_sync=True,
+                                 fallback_series_id=query['parent_tmdb_id'])
         return [Result('open', str(file_id), lang, name, hi,
                        verified=bool(media['episode']), sync=matched, popularity=score[-1])
-                for score, file_id, lang, name, hi, matched in
-                client.search(query, media['preferred'], normalise(media['release']), include_sync=True)]
+                for score, file_id, lang, name, hi, matched in rows]
 
     def dl(self, media):
         name, episode = media['title'], media['episode']

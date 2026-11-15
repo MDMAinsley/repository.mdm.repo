@@ -7,7 +7,7 @@ from urllib.request import Request, urlopen
 
 
 API = 'https://api.opensubtitles.com/api/v1'
-USER_AGENT = 'MDM Subs v0.2.0'
+USER_AGENT = 'MDM Subs v0.2.1'
 LIMIT = 2 * 1024 * 1024
 TIMECODE = re.compile(r'^\d{2,}:\d{2}:\d{2}[,.]\d{3}\s+-->\s+\d{2,}:\d{2}:\d{2}[,.]\d{3}', re.M)
 
@@ -57,7 +57,7 @@ class OpenSubtitles:
             raise SubtitleError('OpenSubtitles returned an unreadable response.')
         return result
 
-    def search(self, query, preferred, release, *, include_sync=False):
+    def search(self, query, preferred, release, *, include_sync=False, fallback_series_id=None):
         rows = self.request('/subtitles', query=query).get('data', [])
         if not isinstance(rows, list):
             raise SubtitleError('OpenSubtitles returned an unreadable search result.')
@@ -73,6 +73,18 @@ class OpenSubtitles:
                 if field in query
             ):
                 continue
+            if fallback_series_id is not None:
+                if not isinstance(feature, dict) or not all(
+                    str(feature.get(field)) == str(query[field])
+                    for field in ('season_number', 'episode_number')
+                ):
+                    continue
+                actual_series = feature.get('parent_tmdb_id')
+                if actual_series is not None:
+                    if str(actual_series) != str(fallback_series_id):
+                        continue
+                elif normalise(str(feature.get('parent_title', ''))) != normalise(query['query']):
+                    continue
             language = attributes.get('language')
             files = attributes.get('files')
             if not isinstance(language, str) or not re.fullmatch(r'[a-z]{2,3}(?:-[a-z]{2,3})?', language):

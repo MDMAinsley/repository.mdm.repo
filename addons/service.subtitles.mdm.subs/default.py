@@ -141,6 +141,8 @@ def search(handle, base, params, providers):
     results, failures = providers.search(media)
     if failures:
         xbmc.log('MDM Subs provider unavailable: '+', '.join(sorted(failures)), xbmc.LOGWARNING)
+    if not results:
+        xbmcgui.Dialog().notification('MDM Subs', 'No matching subtitles. Try a manual search by title.')
     for row in results:
         label = xbmc.convertLanguage(row.language, xbmc.ENGLISH_NAME) or row.language
         entry = xbmcgui.ListItem(label=label, label2=f'{row.name} Ã‚Â· {NAMES[row.provider]}')
