@@ -24,7 +24,7 @@
     </assets>
   </extension>
   
-</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.17.31" provider-name="MDM">
+</addon><addon id="plugin.video.mdm.flix" name="MDM Flix" version="0.17.32" provider-name="MDM">
 
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
@@ -106,7 +106,7 @@
     </assets>
   </extension>
   
-</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.3.19" provider-name="MDMAinsley">
+</addon><addon id="skin.mdm.skin" name="MDM Skin" version="0.3.20" provider-name="MDMAinsley">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="xbmc.gui" version="5.17.0" />
@@ -133,7 +133,7 @@
     <license>GPL-2.0; CC-BY-SA-4.0; font licenses in fonts/</license>
     <source>https://github.com/MDMAinsley/skin.mdm.skin</source>
   </extension>
-</addon><addon id="service.subtitles.mdm.subs" name="MDM Subs" version="0.2.0" provider-name="MDMAinsley">
+</addon><addon id="service.subtitles.mdm.subs" name="MDM Subs" version="0.2.1" provider-name="MDMAinsley">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
   </requires>
