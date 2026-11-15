@@ -23,8 +23,8 @@
       "version": "0.4.9"
     },
     "skin.mdm.skin": {
-      "commit": "f1462b0bbe84aad832846f52171f826283cd91b0",
-      "version": "0.3.21"
+      "commit": "4c9b9321dde00f5b68977196594d420e7383b30a",
+      "version": "0.3.22"
     },
     "service.subtitles.mdm.subs": {
       "commit": "d687205b07e12defad3dd243e24af05cf2ca95c2",
@@ -37,12 +37,12 @@
     "script.mdm.conf": "2339ba7fbeb0f9df29ff91f32dc4a965",
     "script.mdm.core": "aeac1fc74c846961ab567b3aee53bba1",
     "script.mdm.link": "64d3147c28a06134a527b05cedf277da",
-    "skin.mdm.skin": "7d2cdc427e8bf49bcf06122fab438065",
+    "skin.mdm.skin": "a8faad40d926923a4881788eb935b54d",
     "service.subtitles.mdm.subs": "9654b1fd3cabfc7afe843d361ac504dd"
   },
   "files": {
-    "addons.xml": "e003f05f7723dc2c41c08f053f3b29d9d1f98ff9b80ccf919e5b504374c4775b",
-    "addons.xml.md5": "e2c84f9a8a67325f2e6538ad361064f8758ef8374f40d1358c553692a994f29b",
+    "addons.xml": "1189adfa63f84125e4e802a9b3a36c3d9f1b069789682823c22034679f2d5c76",
+    "addons.xml.md5": "b987e102a8fbf66e4ed4116aeabe7265dd3f57f65a7514bf5c0179332b8aa770",
     "index.html": "434ab3b0709d4e17d3aa0884ef3db82c736481d7d85f72b4d5042465d2fa2af8",
     "plugin.video.mdm.flix/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
     "plugin.video.mdm.flix/addon.xml": "055a710b119f9049fe35c1753faa4869b587df73bc3837bc78b1b50f20910fd3",
@@ -349,7 +349,7 @@
     "service.subtitles.mdm.subs/service.subtitles.mdm.subs-0.2.1.zip": "d36ba0fa812e15edf83799307ed05ce283f6fe50c19c502997d703d0935b9f38",
     "service.subtitles.mdm.subs/service.subtitles.mdm.subs-0.2.1.zip.md5": "9ff97c36a9427c64aacf464738537352a87aed9435745c311dcf81443110fb40",
     "skin.mdm.skin/LICENSE.txt": "189b1af95d661151e054cea10c91b3d754e4de4d3fecfb074c1fb29476f7167b",
-    "skin.mdm.skin/addon.xml": "7029198392069cabe4b2f9857efe35a9eaed0269812ce60f446bfe81624a149f",
+    "skin.mdm.skin/addon.xml": "b0af0f38236261599298a88801dfd09275ee6ffae7f88ea85d5c566ad4b4b0ab",
     "skin.mdm.skin/changelog-0.0.2.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "skin.mdm.skin/changelog-0.1.0.txt": "9293df4d9180420c8f2d9fb25fffeeb3dc54eae5ae5746cb4a2978eaec56d682",
     "skin.mdm.skin/changelog-0.1.1.txt": "14c620f5f815ac0bdbdfeb55f98b133db297e9a303190346201bc8e037219ab6",
@@ -400,6 +400,8 @@
     "skin.mdm.skin/skin.mdm.skin-0.3.20.zip.md5": "99728ec067b67dd2726433a089ffc6b4a4fc328e4658ff655f5649e0b7d3c33c",
     "skin.mdm.skin/skin.mdm.skin-0.3.21.zip": "c448ed2f87f33b350612caaf5aae81e3573d8d6490e3a7fb12d5dc6f548bf992",
     "skin.mdm.skin/skin.mdm.skin-0.3.21.zip.md5": "3ca6478febbfebbbdc8bc62af49bab0d13a64b9e58b087cab0c4dbd94234ffea",
+    "skin.mdm.skin/skin.mdm.skin-0.3.22.zip": "3ab38970cb637a16d34e80dadd886112b3edcfd2bcf926f7dbf5364293819033",
+    "skin.mdm.skin/skin.mdm.skin-0.3.22.zip.md5": "76fa09081ccfa122623d8c3645914d12cce840c46e746e385cb4ba03ba557bc3",
     "skin.mdm.skin/skin.mdm.skin-0.3.3.zip": "9b91ab74d0507788de5bc48bbbf185156fe9b960660792da7870edc0dae68e97",
     "skin.mdm.skin/skin.mdm.skin-0.3.3.zip.md5": "6a14ab88e785da57941d695377421e1e737d8588b166c6ebbb7bf0e7e3300677",
     "skin.mdm.skin/skin.mdm.skin-0.3.4.zip": "34e3c789d4447af12de2389d176ab68675b38f5b3532bf4cd5f59759e3884e20",
